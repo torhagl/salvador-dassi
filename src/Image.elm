@@ -16,16 +16,6 @@ type alias Rotation =
     Attribute Msg
 
 
-default : Image
-default =
-    Image { url = "", rotation = lol }
-
-
-lol : Rotation
-lol =
-    style [ ( "", "" ) ]
-
-
 newImage : String -> Image
 newImage url =
     Image <| { url = url, rotation = randomRotation }
@@ -36,9 +26,17 @@ imageToHtml (Image image) =
     img [ src image.url ] []
 
 
+
+-- TODO
+
+
 randomRotation : Rotation
 randomRotation =
     style []
+
+
+
+-- TODO
 
 
 possibleRotations : List Rotation
