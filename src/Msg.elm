@@ -1,5 +1,9 @@
 module Msg exposing (..)
 
+import Time exposing (..)
+import Keyboard exposing (..)
+
 
 type Msg
-    = None
+    = Tick Time
+    | KeyMsg Keyboard.KeyCode

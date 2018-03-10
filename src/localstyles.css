@@ -1,0 +1,104 @@
+.centered-70 {
+    width: 50%;
+    margin: auto;
+    float: top;
+    z-index: 20;
+    position: relative;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="centered-"] {
+        width: 90%;
+        margin: auto;
+        float: top;
+        z-index: 20;
+        position: relative;
+    }
+}
+
+.pad-1 {
+    padding: 1em;
+}
+
+.z-index-bg {
+    z-index: 1;
+    position: absolute;
+    background-repeat: repeat;
+}
+
+body {
+    background-image: url("https://f4.bcbits.com/img/a3553771474_2.jpg");
+    background-repeat: repeat;
+}
+
+.restricted-width{
+    display: inline-block;
+    float: left;
+    position: fixed;
+    background-color: lightgoldenrodyellow;
+    z-index: 25;
+}
+
+.rotate-0{
+
+}
+
+.rotate-20{
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+    transform: rotate(20deg);
+}
+
+.rotate-40{
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
+}
+
+.rotate-70{
+    -ms-transform: rotate(70deg); /* IE 9 */
+    -webkit-transform: rotate(70deg); /* Chrome, Safari, Opera */
+    transform: rotate(70deg);
+}
+
+.rotate-90{
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.rotate-140{
+    -ms-transform: rotate(140deg); /* IE 9 */
+    -webkit-transform: rotate(140deg); /* Chrome, Safari, Opera */
+    transform: rotate(140deg);
+}
+
+.rotate-180{
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+.rotate-220{
+    -ms-transform: rotate(220deg); /* IE 9 */
+    -webkit-transform: rotate(220deg); /* Chrome, Safari, Opera */
+    transform: rotate(220deg);
+}
+
+.rotate-270{
+    -ms-transform: rotate(270deg); /* IE 9 */
+    -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+    transform: rotate(270deg);
+}
+
+.rotate-300{
+    -ms-transform: rotate(300deg); /* IE 9 */
+    -webkit-transform: rotate(300deg); /* Chrome, Safari, Opera */
+    transform: rotate(300deg);
+}
+
+.rotate-330{
+    -ms-transform: rotate(330deg); /* IE 9 */
+    -webkit-transform: rotate(330deg); /* Chrome, Safari, Opera */
+    transform: rotate(330deg);
+}
