@@ -7,6 +7,7 @@ import Msg exposing (..)
 import Time exposing (..)
 import Task exposing (..)
 import Keyboard exposing (..)
+import Random exposing (..)
 
 
 main : Program Never Model Msg
@@ -20,26 +21,41 @@ type alias Model =
     }
 
 
-init : ( Model, Cmd msg )
+init : ( Model, Cmd Msg )
 init =
-    ( { displayedImages = [], time = 2 }, Cmd.none )
+    ( { displayedImages = [], time = 2 }, Task.perform Tick Time.now )
 
 
-update : Msg -> Model -> ( Model, Cmd msg )
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Tick x ->
-            ( { model | time = round x }, Cmd.none )
+            let
+                newImages =
+                    List.take 4 (List.map (\y -> Image.newImage y (round x)) allImageURLs)
 
-        KeyMsg _ ->
-            ( model, Cmd.none )
+                randomInt =
+                    Tuple.first (Random.step (Random.int 1 18) (Random.initialSeed <| round x))
+            in
+                ( { model | displayedImages = newImages, time = randomInt }, Cmd.none )
+
+        KeyMsg k ->
+            let
+                newImages =
+                    List.take 4 (List.map (\y -> Image.newImage y k) allImageURLs)
+            in
+                ( { model | displayedImages = newImages }, Cmd.none )
+
+
+
+--Task.perform Tick Time.now )
 
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
-        [ Time.every millisecond Tick
-        , Keyboard.downs KeyMsg
+        [ Keyboard.downs KeyMsg
+        , Time.every second Tick
         ]
 
 
@@ -63,7 +79,7 @@ stylesheet =
 
 view : Model -> Html Msg
 view model =
-    div [] <| stylesheet :: (List.map Image.imageToHtml <| List.map (\y -> Image.newImage y model.time) allImageURLs)
+    div [] <| stylesheet :: (List.map Image.imageToHtml model.displayedImages)
 
 
 allImageURLs : List String
@@ -82,6 +98,5 @@ allImageFilenames =
     , "torari-min.png"
     , "toraritor-min.png"
     , "torguns-min.png"
-    , "torhighaf-min.png"
-    , "torhighaf-min.png"
+    , "toweltor-min.png"
     ]

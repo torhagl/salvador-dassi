@@ -42,7 +42,7 @@ imageToHtml (Image image) =
 
 getRandomIntInListRange : List a -> Int -> Int
 getRandomIntInListRange list timeseed =
-    Tuple.first (Random.step (Random.int 1 ((List.length list) + 1)) (Random.initialSeed timeseed))
+    Tuple.first (Random.step (Random.int 1 (List.length list)) (Random.initialSeed timeseed))
 
 
 randomRotation : Int -> Maybe Rotation
@@ -57,4 +57,4 @@ possibleRotations =
 
 possibleRotationDegrees : List String
 possibleRotationDegrees =
-    [ "220", "20", "0", "40", "70", "90", "140", "180", "270", "300", "330" ]
+    [ "0", "20", "40", "60", "80", "100", "120", "140", "160", "180", "200", "220", "240", "260", "280", "300", "320", "340" ]

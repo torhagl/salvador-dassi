@@ -40,7 +40,9 @@ body {
 }
 
 .rotate-0{
-
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
 }
 
 .rotate-20{
@@ -55,16 +57,26 @@ body {
     transform: rotate(40deg);
 }
 
-.rotate-70{
-    -ms-transform: rotate(70deg); /* IE 9 */
-    -webkit-transform: rotate(70deg); /* Chrome, Safari, Opera */
-    transform: rotate(70deg);
+.rotate-60{
+    -ms-transform: rotate(60deg); /* IE 9 */
+    -webkit-transform: rotate(60deg); /* Chrome, Safari, Opera */
+    transform: rotate(60deg);
 }
 
-.rotate-90{
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
+.rotate-80{
+    -ms-transform: rotate(80deg); /* IE 9 */
+    -webkit-transform: rotate(80deg); /* Chrome, Safari, Opera */
+    transform: rotate(80deg);
+}
+.rotate-100{
+    -ms-transform: rotate(100deg); /* IE 9 */
+    -webkit-transform: rotate(100deg); /* Chrome, Safari, Opera */
+    transform: rotate(100deg);
+}
+.rotate-120{
+    -ms-transform: rotate(120deg); /* IE 9 */
+    -webkit-transform: rotate(120deg); /* Chrome, Safari, Opera */
+    transform: rotate(120deg);
 }
 
 .rotate-140{
@@ -73,10 +85,22 @@ body {
     transform: rotate(140deg);
 }
 
+.rotate-160{
+    -ms-transform: rotate(160deg); /* IE 9 */
+    -webkit-transform: rotate(160deg); /* Chrome, Safari, Opera */
+    transform: rotate(160deg);
+}
+
 .rotate-180{
     -ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg);
+}
+
+.rotate-200{
+    -ms-transform: rotate(200deg); /* IE 9 */
+    -webkit-transform: rotate(200deg); /* Chrome, Safari, Opera */
+    transform: rotate(200deg);
 }
 
 .rotate-220{
@@ -85,10 +109,23 @@ body {
     transform: rotate(220deg);
 }
 
-.rotate-270{
-    -ms-transform: rotate(270deg); /* IE 9 */
-    -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
-    transform: rotate(270deg);
+.rotate-240{
+    -ms-transform: rotate(240deg); /* IE 9 */
+    -webkit-transform: rotate(240deg); /* Chrome, Safari, Opera */
+    transform: rotate(240deg);
+}
+
+.rotate-260{
+    -ms-transform: rotate(260deg); /* IE 9 */
+    -webkit-transform: rotate(260deg); /* Chrome, Safari, Opera */
+    transform: rotate(260deg);
+}
+
+
+.rotate-280{
+    -ms-transform: rotate(280deg); /* IE 9 */
+    -webkit-transform: rotate(280deg); /* Chrome, Safari, Opera */
+    transform: rotate(280deg);
 }
 
 .rotate-300{
@@ -97,8 +134,14 @@ body {
     transform: rotate(300deg);
 }
 
-.rotate-330{
-    -ms-transform: rotate(330deg); /* IE 9 */
-    -webkit-transform: rotate(330deg); /* Chrome, Safari, Opera */
-    transform: rotate(330deg);
+.rotate-320{
+    -ms-transform: rotate(320deg); /* IE 9 */
+    -webkit-transform: rotate(320deg); /* Chrome, Safari, Opera */
+    transform: rotate(320deg);
+}
+
+.rotate-340{
+    -ms-transform: rotate(340deg); /* IE 9 */
+    -webkit-transform: rotate(340deg); /* Chrome, Safari, Opera */
+    transform: rotate(340deg);
 }
