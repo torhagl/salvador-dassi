@@ -13,6 +13,11 @@ type Image
         }
 
 
+url : Image -> String
+url (Image img) =
+    img.url
+
+
 type alias Rotation =
     Attribute Msg
 

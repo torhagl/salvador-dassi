@@ -8,6 +8,7 @@ import Time exposing (..)
 import Task exposing (..)
 import Keyboard exposing (..)
 import Random exposing (..)
+import Random.List exposing (..)
 
 
 main : Program Never Model Msg
@@ -31,20 +32,28 @@ update msg model =
     case msg of
         Tick x ->
             let
-                newImages =
-                    List.take 4 (List.map (\y -> Image.newImage y (round x)) allImageURLs)
+                prevUrls =
+                    List.map Image.url model.displayedImages
 
-                randomInt =
-                    Tuple.first (Random.step (Random.int 1 18) (Random.initialSeed <| round x))
+                newImages =
+                    List.take 6 <| List.map (\y -> Image.newImage y (round x)) <| Tuple.first <| Random.step (shuffle (listDifference allImageURLs prevUrls)) (Random.initialSeed (round x))
             in
-                ( { model | displayedImages = newImages, time = randomInt }, Cmd.none )
+                ( { model | displayedImages = newImages }, Cmd.none )
 
         KeyMsg k ->
             let
+                prevUrls =
+                    List.map Image.url model.displayedImages
+
                 newImages =
-                    List.take 4 (List.map (\y -> Image.newImage y k) allImageURLs)
+                    List.take 6 <| List.map (\y -> Image.newImage y k) prevUrls
             in
                 ( { model | displayedImages = newImages }, Cmd.none )
+
+
+listDifference : List a -> List a -> List a
+listDifference l1 l2 =
+    Tuple.first <| List.partition (\y -> not <| List.member y l2) l1
 
 
 
@@ -55,7 +64,7 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
         [ Keyboard.downs KeyMsg
-        , Time.every second Tick
+        , Time.every (second * 2) Tick
         ]
 
 
